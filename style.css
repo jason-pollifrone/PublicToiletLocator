@@ -1,0 +1,33 @@
+body {
+	font-family: calibri;
+	background-repeat: repeat;
+	background-position: center;
+	background-size: cover;
+    background-attachment: fixed;
+	
+	}
+h1 {
+  text-align: center;
+  background: transparent url("*") no-repeat;
+  width: 500px;
+  margin: auto;
+  display: flex;
+  position: relative;
+  }
+
+#reglog{
+        display: inline-block;
+        text-align: center;
+        margin: auto;
+        padding: 15px;
+        position: relative;
+        margin-left: 300px;
+}
+
+#public{
+        display: inline-block;
+        text-align: center;
+        margin: auto;
+        padding: 15px;
+}
+

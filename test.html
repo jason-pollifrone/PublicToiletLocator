@@ -1,0 +1,96 @@
+   <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+     
+	<title> Toilet Locator </title>
+    
+</head>  
+<body>
+	<h1><a href="toiletlocator.html"><img src="" alt="banner" height= "150" width= "500"/></a></h1>
+		<br>
+		<hr>
+		<br>
+		<button type="button" onclick="currentLocation()" style="height:60px">Current Location</button>
+		<br>
+		<p id="error"> </p>
+		<br>
+		<div id="map" style="width:1000px; height:1000px">
+			
+		</div>
+
+	
+<script>
+function googleMap() {
+    var locations = [
+      ['Hungry Jacks Toilet', -37.809078,144.963118, 1],
+      ['McDonalds Vic Market Toilet', -37.807314,144.962367, 2],
+      ['Joomak Toilet', -37.807577,144.962818, 3]
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 17,
+      center: new google.maps.LatLng(-37.808272, 144.96264629999996),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+}
+function currentLocation(){
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+}
+
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9fxFh1sqOfxvNB56Pqc3SWnXqBCAwQ_8&callback=googleMap">
+    </script>
+</body>
+
+
+
+
+</html>	
