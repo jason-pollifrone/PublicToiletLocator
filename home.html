@@ -1,50 +1,46 @@
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="style.css">
-     
-	<title> Toilet Wayfinder </title>
+	<link rel="stylesheet" href="toilet.css">
+    <link rel="icon" href="images/logo.ico">
+	<title>Toilet Wayfinder</title>
     
-</head>  
+</head>
+
 <body>
-	<h1><a href="Home.php"><img src="" alt="Toilet Wayfinder Banner" height= "150" width= "500"/></a></h1>
+	<section>
+	<!--Logo-->
+		<br>
+		<a href="toiletlocatorV2.html"><img src="images/logo2.png" alt="banner" height= "100"/></a>
 		<br>
 		<hr>
-    <div id="reglog">
-    <h2>Admin Register</h2>
-        <br>
+		
+	<!--Register-->
+		<div id="reglog">
+		<h2>Admin Register</h2>
         <form action="register.php" method="POST">
-
             Username: <input type="text" name="username" id="username" pattern="[A-Za-z]{3,9}" required>
             <br/><br/>
             Password: <input type="password" name="password" id="password" pattern=".{4,}" required>
             <br/><br/>
-            <button type="submit">Register</button>
+            <button type="submit">Register</button>	
         </form>
-    
+		
+		<br>
+		
+	<!--Login-->
         <h2>Admin Login</h2>
-
         <form action="login.php" method="POST">
-
             Username: <input type="text" name="username" id="username" pattern="[A-Za-z]{3,9}">
             <br/><br/>
             Password: <input type="password" name="password" id="password" pattern=".{4,}">
             <br/><br/>
             <button type="submit">Login</button>
         </form>
-         
-    </div>
-    
-    <div id="public">
-    <h2>Public Toilet Wayfinder</h2>
+        </div>
 
-        <form action="toiletwayfinder(public).html" method="POST">
-            <input type="submit" value="Go Now" 
-         name="pb" id="pb" />
-        </form>
-    </div>
-    
+    </section>
 </body>
 
 

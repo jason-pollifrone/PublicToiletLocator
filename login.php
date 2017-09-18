@@ -22,13 +22,13 @@
 	}
 	
 	if($exist == 1){
-        echo "Login Successful. <br><br>You will be redirected to Admin page shortly..";     
-        header( "Refresh:5; url=toiletwayfinder(admin).php", true, 303);
+        echo "Login Successful. <br><br>You will be redirected to Admin page shortly.";     
+        header( "Refresh:5; url=toiletwayfinderadmin.php", true, 303);
 	}else
         {
 
-		echo "Account not found returning to home page.";
-        header( "Refresh:5; url=home.html", true, 303);
+		echo "Account not found, returning to home page.";
+        header( "Refresh:5; url=login.html", true, 303);
 	}
     
 ?>
