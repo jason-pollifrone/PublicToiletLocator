@@ -1,2 +1,2 @@
-# PublicToiletLocator
+# Toilet Wayfinder
 Programming Project
