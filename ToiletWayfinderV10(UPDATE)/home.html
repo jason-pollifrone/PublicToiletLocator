@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="toilet.css">
+    <link rel="icon" href="images/logo.ico">
+	<title>Toilet Wayfinder</title>
+    
+</head>
+
+<body>
+	<section>
+	<!--Logo-->
+		<br>
+		<a href="index.html"><img src="images/logo2.png" alt="banner" height= "100"/></a>
+		<br>
+		<hr>
+		
+	<!--Register-->
+		<div id="reglog">
+		<h2>Admin Register</h2>
+        <form action="register.php" method="POST">
+            Username: <input type="text" name="username" id="username" pattern="[A-Za-z]{3,9}" required>
+            <br/><br/>
+            Password: <input type="password" name="password" id="password" pattern=".{4,}" required>
+            <br/><br/>
+            <button type="submit">Register</button>	
+        </form>
+		
+		<br>
+		
+	<!--Login-->
+        <h2>Admin Login</h2>
+        <form action="login.php" method="POST">
+            Username: <input type="text" name="username" id="username" pattern="[A-Za-z]{3,9}">
+            <br/><br/>
+            Password: <input type="password" name="password" id="password" pattern=".{4,}">
+            <br/><br/>
+            <button type="submit">Login</button>
+        </form>
+        </div>
+
+    </section>
+</body>
+
+
+
+
+</html>	
