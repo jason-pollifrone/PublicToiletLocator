@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<title> Toilet Locator </title>
+</head>  
+<body>
+	<h1><a href="toiletlocator.html"><img src="" alt="banner" height= "150" width= "500"/></a></h1>
+		<br>
+		<hr>
+		<br>
+		<button onclick="currentLocation()">Current Location</button>
+		<br>
+		<p id="error"> </p>
+		<br>
+		<div id="map" style="width:400px;height:700px">
+			
+		</div>
+
+	
+	
+	
+</body>
+
+
+
+
+
+
+<script>
+      function googleMap() {
+        var location = {lat: -37.808272, lng: 144.96264629999996};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: location
+        });
+        var marker = new google.maps.Marker({
+          position: location,
+          map: map
+        });
+      }
+
+var errorMsg = document.getElementById("error");
+
+function currentLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        errorMsg.innerHTML = "Browser does not support.";
+    }
+}
+
+function setLocation(current) {
+    location = {lat: current.coords.latitude, lng: current.coords.longitude};
+}
+  </script>
+ 
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9fxFh1sqOfxvNB56Pqc3SWnXqBCAwQ_8&callback=googleMap">
+    </script>
+
+
+</html>	

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="toilet.css">
+    <link rel="icon" href="images/logo.ico">
+	<title>Toilet Wayfinder</title>
+    
+</head>
+
+<body>
+	<section>
+	<!--Logo-->
+		<br>
+		<a href="toiletwayfinder.html"><img src="images/logo2.png" alt="banner" height= "100"/></a>
+		<br>
+		<hr>
+		
+	<!--Current Location Button-->
+		<br>
+		<button onclick="currentLocation()" style="height:30px">Current Location</button>
+		<p id="error"> </p>
+				
+	<!--Map-->
+		<div id="map">
+	</section>
+	
+	<script>
+	function googleMap() {
+    var locations = [
+      ['Hungry Jacks Toilet <br> <a href="https://goo.gl/maps/85JHGDW3qWt">Get Directions</a>', -37.809078,144.963118, 1],
+      ['McDonalds Vic Market Toilet', -37.807314,144.962367, 2],
+      ['Joomak Toilet', -37.807577,144.962818, 3]
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 17,
+      center: new google.maps.LatLng(-37.808272, 144.96264629999996),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+}
+	</script>	
+  
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9fxFh1sqOfxvNB56Pqc3SWnXqBCAwQ_8&callback=googleMap"></script>
+</body>
+
+</html>	
