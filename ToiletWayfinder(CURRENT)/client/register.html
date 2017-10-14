@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../resource/toilet.css">
+    <link rel="icon" href="../images/logo.ico">
+	<title>Toilet Wayfinder | Register</title>
+    
+</head>
+
+<body>
+
+	<img src="../images/register.png" alt="banner" height="70"/>
+
+	<section>
+		<!--Register-->
+		<div id="reglog">
+        <form action="../model/register.php" method="POST">
+            <br><input type="text" name="username" id="username" placeholder="Username" required>
+            <br><br>
+            <br><input type="password" name="password" id="password" placeholder="Password" required>
+            <br><br><br>
+            <button type="submit">Register</button>	
+			<br>
+			<br>
+			<hr>
+			<br>
+			Already have an account?<br><a href="../client/login.html">Log in Here</a>
+			<br>or<br>
+			<a href="../client/toiletwayfinderpublic.html">Visit the public website</a>
+        </form>
+        </div>
+    </section>
+</body>
+
+<script>
+function myFunction() {
+    var x = document.getElementById('myDIV');
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+</script>
+
+</html>	
